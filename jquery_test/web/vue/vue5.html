@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-if="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>组件化应用构建</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+<div id="app">
+    <p>{{ obj.foo }}</p>
+    <button @click="obj.foo = 'baz'">Change it</button>
+</div>
+<script>
+    var obj = {
+        foo: 'bar'
+    };
+
+    Object.freeze(obj);//防止修改现有的属性
+
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                obj
+            }
+        }
+    })
+</script>
+</body>
+</html>
