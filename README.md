@@ -1,1 +1,1 @@
-# jquery_test
+# simple test for shiro
